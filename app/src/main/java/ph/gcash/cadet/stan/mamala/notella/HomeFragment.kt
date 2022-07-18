@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import kotlinx.android.synthetic.main.fragment_create_note.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.launch
 import ph.gcash.cadet.stan.mamala.notella.adapter.NotesAdapter
@@ -18,6 +16,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class HomeFragment : BaseFragment() {
+
     var arrNotes = ArrayList<Notes>()
     var notesAdapter: NotesAdapter = NotesAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,18 +50,18 @@ class HomeFragment : BaseFragment() {
 
         recycler_view.setHasFixedSize(true)
 
-        recycler_view.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recycler_view.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
 
         launch {
             context?.let {
                 var notes = NotesDatabase.getDatabase(it).noteDao().getAllNotes()
-                notesAdapter!!.setData(notes)
+                notesAdapter.setData(notes)
                 arrNotes = notes as ArrayList<Notes>
                 recycler_view.adapter = notesAdapter
             }
         }
 
-        notesAdapter!!.setOnClickListener(onClicked)
+        notesAdapter.setOnClickListener(onClicked)
 
         fabBtnCreateNote.setOnClickListener {
             replaceFragment(CreateNoteFragment.newInstance(),false)
@@ -95,12 +94,12 @@ class HomeFragment : BaseFragment() {
 
 
     private val onClicked = object :NotesAdapter.OnItemClickListener{
-        override fun onClicked(notesId: Int) {
+        override fun onClicked(noteId: Int) {
 
 
-            var fragment : Fragment
+            var fragment :Fragment
             var bundle = Bundle()
-            bundle.putInt("noteId",notesId)
+            bundle.putInt("noteId",noteId)
             fragment = CreateNoteFragment.newInstance()
             fragment.arguments = bundle
 
@@ -110,7 +109,7 @@ class HomeFragment : BaseFragment() {
     }
 
 
-    fun replaceFragment(fragment: Fragment, istransition:Boolean){
+    fun replaceFragment(fragment:Fragment, istransition:Boolean){
         val fragmentTransition = activity!!.supportFragmentManager.beginTransaction()
 
         if (istransition){
@@ -118,4 +117,6 @@ class HomeFragment : BaseFragment() {
         }
         fragmentTransition.replace(R.id.frame_layout,fragment).addToBackStack(fragment.javaClass.simpleName).commit()
     }
+
+
 }

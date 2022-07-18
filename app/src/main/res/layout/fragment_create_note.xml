@@ -44,8 +44,8 @@
         android:inputType="text"
         android:maxLines="1"
         android:padding="@dimen/_10sdp"
-        android:textColor="@color/ColorWhite"
-        android:textColorHint="@color/ColorGray"
+        android:textColor="@color/Charcoal"
+        android:textColorHint="@color/Gray"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +64,8 @@
         android:fontFamily="@font/manrope_bold"
         android:maxLines="1"
         android:paddingStart="@dimen/_10sdp"
-        android:textColor="@color/ColorGray"
-        android:textColorHint="@color/ColorGray"
+        android:textColor="@color/Charcoal"
+        android:textColorHint="@color/Gray"
         android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +87,7 @@
             android:layout_width="@dimen/_5sdp"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_5sdp"
-            android:background="@color/ColorBlue" />
+            android:background="@color/PaleYellow" />
 
         <EditText
             android:id="@+id/etNoteSubTitle"
@@ -100,8 +100,8 @@
             android:inputType="text"
             android:maxLines="1"
             android:padding="@dimen/_10sdp"
-            android:textColor="@color/ColorWhite"
-            android:textColorHint="@color/ColorGray"
+            android:textColor="@color/Charcoal"
+            android:textColorHint="@color/Gray"
             android:textSize="@dimen/_10ssp" />
     </LinearLayout>
 
@@ -192,23 +192,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
                 android:fontFamily="@font/manrope_bold"
-                android:background="@color/colorAccent"
+                android:background="@color/Red"
                 android:text="@string/cancel"
                 android:textSize="@dimen/_12ssp"
                 android:textAllCaps="false"
-                android:textColor="@color/ColorWhite"
+                android:textColor="@color/White"
                 android:id="@+id/btnCancel"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
                 android:fontFamily="@font/manrope_bold"
-                android:background="@color/colorAccent"
+                android:background="@color/BrightYellow"
                 android:text="@string/ok"
                 android:textAllCaps="false"
                 android:textSize="@dimen/_12ssp"
                 android:layout_marginStart="@dimen/_5sdp"
-                android:textColor="@color/ColorWhite"
+                android:textColor="@color/Charcoal"
                 android:id="@+id/btnOk"/>
 
 
@@ -245,8 +245,8 @@
         android:hint="@string/notes_desc"
         android:inputType="textMultiLine"
         android:padding="@dimen/_10sdp"
-        android:textColor="@color/ColorWhite"
-        android:textColorHint="@color/ColorGray"
+        android:textColor="@color/Charcoal"
+        android:textColorHint="@color/Gray"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

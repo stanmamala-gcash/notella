@@ -3,6 +3,7 @@ package ph.gcash.cadet.stan.mamala.notella
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun replaceFragment(fragment: Fragment, istransition:Boolean){
+    fun replaceFragment(fragment:Fragment, istransition:Boolean){
         val fragmentTransition = supportFragmentManager.beginTransaction()
 
         if (istransition){
